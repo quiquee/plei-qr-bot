@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  qr:
+    build: .
+    command: python ./main.py
+    volumes:
+      - .:/code
+

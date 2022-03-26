@@ -30,15 +30,14 @@ async def on_message(message):
             
             # Send the QrCode the the user who asked for
             await message.author.send(
-                "------------------------------------------------\n\n\nHello " + message.author.name + "\nHere is your new QR Code to login : ")
+                "------------------------------------------------\n\n\nHello " + message.author.name + "\nHere is your new QR Code: ")
             await message.author.send(file=discord.File(qrCodePath))
             
             return
         else:
-            print("This user didn't receive a QR Code : " + message.author.name)
-            print("Discord ID : " + str(message.author.id))
-            print("Current time : ", current_time)
+            print(current_time, "A user didn't receive a non existing QR Code : " + qrCodePath)            
             return
+    
 
 #Run the client (This runs first)
 client.run(DiscordBotToken)

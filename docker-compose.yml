@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  qr:
+  qrbot:
     build: .
-    command: python ./main.py
+    command: bash -c "python ./qrDiscordBot.py > log/`date +"%Y%m%d%H%M%S"`.log"
     volumes:
-      - .:/code
-
+      - ./qrcodes:/qrcodes
+      - ./log:/log

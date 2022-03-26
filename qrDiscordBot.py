@@ -35,6 +35,8 @@ async def on_message(message):
             
             return
         else:
+            await message.author.send(
+                "------------------------------------------------\n\n\nHello " + message.author.name + "\nSorry, there is no QR Code for you ")
             print(current_time, "A user didn't receive a non existing QR Code : " + qrCodePath)            
             return
     
